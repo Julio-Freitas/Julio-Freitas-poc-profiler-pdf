@@ -1,0 +1,49 @@
+{
+  "name": "liquidtest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon app.js",
+    "docker:dev": "docker-compose -f docker-compose.yml up",
+    "prepare": "husky install",
+    "release": "semantic-release",
+    "release:dry": "semantic-release --dry-run"
+  },
+  "author": "julio.freitas",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.1485.0",
+    "canvas": "^2.11.2",
+    "chart.js": "^4.4.0",
+    "chromium": "^3.0.3",
+    "express": "^4.18.2",
+    "husky": "^8.0.3",
+    "liquidjs": "^10.9.2",
+    "puppeteer": "^21.3.8"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^18.4.1",
+    "@commitlint/config-conventional": "^18.4.0",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/commit-analyzer": "^11.1.0",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^9.2.3",
+    "@semantic-release/npm": "^11.0.1",
+    "@semantic-release/release-notes-generator": "^12.1.0",
+    "conventional-changelog-conventionalcommits": "^7.0.2",
+    "nodemon": "^3.0.1",
+    "semantic-release": "^22.0.8"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint:commit"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://[secure]@github.com/Julio-Freitas/poc-profiler-pdf.git"
+  },
+  "type": "module"
+}

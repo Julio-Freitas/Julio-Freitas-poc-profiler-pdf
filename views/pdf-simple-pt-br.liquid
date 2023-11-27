@@ -1,0 +1,1547 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="next-head-count" content="2">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="true" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
+    <meta name="viewport" content="viewport-fit=cover" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet"
+        cossorigin="true" />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&display=swap" rel="stylesheet"
+        rossorigin="true" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.2.0/chartjs-plugin-datalabels.min.js"
+        integrity="sha512-JPcRR8yFa8mmCsfrw4TNte1ZvF1e3+1SdGMslZvmrzDYxS69J7J49vkFL8u6u8PlPJK+H3voElBtUCzaXj+6ig=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script defer src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://hr.solides.com/styles/tailwind.js"></script>
+
+    <style data-styled="active" data-styled-version="5.2.1">
+        :root {
+            --color-primary-100: 245 210 248;
+            --color-primary-300: 180 111 222;
+            --color-primary-500: 137 55 179;
+            --color-primary-700: 96 30 130;
+            --color-primary-900: 61 26 79;
+            --color-secondary-100: 245 233 245;
+            --color-secondary-300: 242 194 242;
+            --color-secondary-500: 206 74 206;
+            --color-secondary-700: 128 41 125;
+            --color-secondary-900: 94 0 90;
+            --color-info-100: 208 242 255;
+            --color-info-300: 116 202 255;
+            --color-info-500: 24 144 255;
+            --color-info-700: 12 83 183;
+            --color-info-900: 4 41 122;
+            --color-success-100: 233 252 212;
+            --color-success-300: 170 242 127;
+            --color-success-500: 84 214 44;
+            --color-success-700: 34 154 22;
+            --color-success-900: 8 102 13;
+            --color-warning-100: 255 247 205;
+            --color-warning-300: 255 225 106;
+            --color-warning-500: 255 193 7;
+            --color-warning-700: 183 129 3;
+            --color-warning-900: 122 79 1;
+            --color-error-100: 255 231 217;
+            --color-error-300: 255 164 141;
+            --color-error-500: 255 72 66;
+            --color-error-700: 183 33 54;
+            --color-error-900: 122 12 46;
+            --color-gray-100: 249 250 251;
+            --color-gray-200: 244 246 248;
+            --color-gray-300: 223 227 232;
+            --color-gray-400: 196 205 213;
+            --color-gray-500: 145 158 171;
+            --color-gray-600: 99 115 129;
+            --color-gray-700: 69 79 91;
+            --color-gray-800: 33 43 54;
+            --color-gray-900: 22 28 36;
+            --color-white: 255 255 255;
+            --color-facebook: 24 119 242;
+            --color-instagram: 224 45 105;
+            --color-linkedin: 0 126 187;
+            --color-twitter: 0 170 236;
+            --color-purpura-50: 255 198 255;
+            --color-purpura-100: 255 175 255;
+            --color-purpura-200: 251 153 255;
+            --color-purpura-300: 227 131 255;
+            --color-purpura-400: 203 109 255;
+            --color-purpura-500: 179 87 255;
+            --color-purpura-600: 155 64 235;
+            --color-purpura-700: 132 40 211;
+            --color-purpura-800: 108 8 189;
+            --color-purpura-900: 84 0 166;
+            --color-profiler-communicator: 255 186 0;
+            --color-profiler-executor: 202 32 55;
+            --color-profiler-planner: 0 167 96;
+            --color-profiler-analyst: 38 87 237;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Lexend" !important;
+        }
+
+        @page {
+            margin: 0;
+            width: 210mm;
+            height: 270mm;
+            font-family: "Lexend";
+        }
+
+        html {
+            -webkit-print-color-adjust: exact;
+        }
+
+        body {
+            font-family: "Lexend";
+            background-color: #f4f6f8;
+            height: 100%;
+            position: relative;
+        }
+
+        #content {
+            max-width: 992px;
+            padding: 0 25px;
+            font-family: "Lexend";
+        }
+
+        #competencies {
+            width: 700px !important;
+            height: 700px !important;
+            margin: 0 auto;
+        }
+
+        .font-roboto-condensed {
+            font-family: "Roboto Condensed";
+        }
+
+        .page-break {
+            display: block;
+            clear: both;
+            page-break-before: always;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="bg-gray-200 w-full relative break-after-column">
+        <img class="absolute top-0 left-0" width="109" height="174"
+            src="https://static-svg.staging.solides.com.br/svg/iconPdfSolidesColor.svg" />
+
+        {% if data.logo_url.length > 0 %}
+        <img width="200" class="absolute top-0 right-0" src="{{ data.logo_url}}" />
+        {% else %}
+        <img width="200" class="absolute top-0 right-0"
+            src="https://mfe-cdn-dev.solides.com/statics/logo_solides_rebranding.svg" />
+        {% endif %}
+        <div>
+            <div class="pt-[50%] h-1/2 w-full">
+                <h1 class="w-full text-center text-xl text-primary font-['Lexend']">Relatório Comportamental</h1>
+                <h4 class="w-full bg-gray-300 p-1 text-center text-primary font-roboto-condensed">Simples</h4>
+            </div>
+            <div class="pl-[25px] pb-[25px] h-1/2 flex flex-col">
+                <div class="flex flex-col justify-end h-full">
+                    <img width="64"
+                        src="https://static-svg.staging.solides.com.br/svg/circleProfiler/{{data.profile|downcase}}.svg" />
+                    <p class="text-primary text-md"><b> {{ data.name}}</b></p>
+                    <p class="text-primary text-sm"><b>Email:</b> {{ data.email }} </p>
+                    <p class="text-primary text-sm"> <b>Tempo de Resposta:</b> {{ data.timeresult }} </p>
+
+                </div>
+                <p class="text-primary text-sm text-center pt-[35px] pb-[0]">{{ data.date }}</p>
+            </div>
+        </div>
+        <img class="absolute bottom-0 right-0 rotate-180" width="109" height="174"
+            src="https://static-svg.staging.solides.com.br/svg/iconPdfSolidesColor.svg" />
+    </section>
+    <div class="pagebreak"></div>
+
+    <main id="content" class="relative top-6">
+        {%if data.testValidation.length > 0 %}
+        <p class="p-1 w-full text-center text-xs text-primary font-roboto-condensed bg-gray-300 rounded">
+            {{ data.testValidation }}</p>
+        {% endif %}
+        <div class="relative">
+            <p class="absolute top-[50px] w-full text-center text-md text-primary font-roboto-condensed">Neste momento,
+                {{ data.name }}
+                está:</p>
+            <canvas id="profilerbar"></canvas>
+            <span class="absolute top-[160px] w-full text-center text-md text-sm text-primary font-roboto-condensed ">em
+                {{ data.answered }}</span>
+        </div>
+
+        <div class="relative">
+            <img width="25" height="18" class="absolute left-[-25px] top-2" class="absolute bottom-0 right-0 rotate-180"
+                width="109" height="174" src="https://static-svg.staging.solides.com.br/svg/iconTitle.svg" />
+            <h1 class="text-primary text-md font-bold pl-6 ">GRÁFICO DE FATORES POSITIVOS E NEGATIVOS</h1>
+        </div>
+        <p class="text-primary text-sm text-center mb-5">Essa é a distribuição de fatores <b>positivos</b> ou
+            <b>negativos</b> por perfil.
+        </p>
+        <canvas id="factorsByProfiler"></canvas>
+
+        <div class="relative mt-[50px] ">
+            <img width="25" height="18" class="absolute left-[-25px] top-2" class="absolute bottom-0 right-0 rotate-180"
+                width="109" height="174" src="https://static-svg.staging.solides.com.br/svg/iconTitle.svg" />
+            <h1 class="text-primary text-md font-bold pl-6 ">INDICADORES SITUACIONAIS</h1>
+        </div>
+        <canvas id="indicators"></canvas>
+
+        <div class="relative page-break mt-[50px] mb [100px]">
+            <img width="25" height="18" class="absolute left-[-25px] top-2" class="absolute bottom-0 right-0 rotate-180"
+                width="109" height="174" src="https://static-svg.staging.solides.com.br/svg/iconTitle.svg" />
+            <h1 class="text-primary text-md font-bold pl-6 pb-6">INTERAÇÃO COM O AMBIENTE / ESTILO DE LIDERANÇA</h1>
+        </div>
+
+
+        <div class="flex flex-col items-center justify-center content-center">
+            <div class="h-[300px] w-full items-center justify-center flex flex-col">
+                <canvas id="requirement"></canvas>
+                <div class="flex gap-6">
+                    <text class="text-[#CA2037]">Executor</text>
+                    <text class="text-[#FFBA00]">Comunicador</text>
+                    <text class="text-[#00A760]">Planejador</text>
+                    <text class="text-[#2657ED]">Analista</text>
+                </div>
+            </div>
+            <div class="flex flex-col gap-1 py-6">
+                <div class="flex gap-4 items-center">
+                    <svg width="12" height="12" version="1" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="6" cy="6" r="5.5" stroke="black" strokeWidth="0" fill="#601e82ed"></circle>
+                    </svg>
+                    <div>
+                        <text class="">PERFIL ATUAL</text>
+                    </div>
+                </div>
+                <div class="flex gap-4 items-center">
+                    <svg width="11" height="11" version="1" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="11" height="11" rx="4" stroke="#CA2037" fill="#CA2037" strokeWidth="1"></rect>
+                    </svg>
+                    <div>
+                        <Text variant="caption">AMBIENTE</Text>
+                    </div>
+                </div>
+                <div class="flex gap-6 items-center">
+                    <svg width="11" height="11" version="1" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M4.60557 0.682257L0.723607 8.44619C0.391156 9.11109 0.874652 9.8934 1.61803 9.8934H9.38197C10.1253 9.8934 10.6088 9.11109 10.2764 8.44619L6.39443 0.682256C6.0259 -0.0547922 4.9741 -0.0547915 4.60557 0.682257Z"
+                            fill="#333333"></path>
+                    </svg>
+                    <div>
+                        <Text variant="caption">ADAPTABILIDADE</Text>
+                    </div>
+                </div>
+            </div>
+
+            <div class="h-[300px] w-full items-center justify-center flex flex-col">
+
+                <canvas id="leadership"></canvas>
+                <div class="flex gap-4">
+                    <text class="text-[#601e82]">Dominante</text>
+                    <text class="text-[#601e82]">Informal</text>
+                    <text class="text-[#601e82]">Condescendente</text>
+                    <text class="text-[#601e82]">Formal</text>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="relative page-break top-5">
+            <img width="25" height="18" class="absolute left-[-25px] top-2" class="absolute bottom-0 right-0 rotate-180"
+                width="109" height="174" src="https://static-svg.staging.solides.com.br/svg/iconTitle.svg" />
+            <h1 class="text-primary text-md font-bold pl-6 ">GRÁFICO DE COMPETÊNCIAS</h1>
+        </div>
+        <div class="h-[940px]">
+            <canvas id="competencies"></canvas>
+        </div>
+
+
+        <div class="relative page-break top-5 pb-[60px]">
+            <img width="25" height="18" class="absolute left-[-25px] top-2" class="absolute bottom-0 right-0 rotate-180"
+                width="109" height="174" src="https://static-svg.staging.solides.com.br/svg/iconTitle.svg" />
+            <h1 class="text-primary text-md font-bold pl-6 ">INCICADORES DE COMPETÊNCIAS</h1>
+        </div>
+        <canvas id="competencies-indicators"></canvas>
+
+        <div class="relative page-break top-5">
+            <img width="25" height="18" class="absolute left-[-25px] top-2" class="absolute bottom-0 right-0 rotate-180"
+                width="109" height="174" src="https://static-svg.staging.solides.com.br/svg/iconTitle.svg" />
+            <h1 class="text-primary text-md font-bold pl-6 ">ÁREA DE TALENTOS</h1>
+        </div>
+        <div class="flex flex-col items-center justify-center mt-[40px]">
+            <canvas id="talents" width="500" height="500" class="rounded-[10px] font-['Lexend']"></canvas>
+
+        </div>
+        <div class="mt-[-150px] flex-1"> <canvas width="500" id="talents-indicators"></canvas></div>
+    </main>
+    <script>
+        Chart.register({ ChartDataLabels });
+        Chart.defaults.font.family = "Lexend";
+        window.addEventListener('load', function () {
+
+
+            const mainProfileLabels = [
+                "executor",
+                "comunicador",
+                "planejador",
+                "analista",
+            ];
+
+            const profileBarColors = {
+                executor: "#CA2037",
+                comunicador: "#FFBA00",
+                planejador: "#00A760",
+                analista: "#2657ED",
+            };
+
+
+            const ctxProfilerBar = document.getElementById("profilerbar");
+            function mountChartProfilerbar() {
+                const profileBarOptions = {
+                    responsive: true,
+                    indexAxis: "y",
+                    animation: false,
+                    layout: {
+                        autoPadding: false,
+                        padding: 0,
+                    },
+                    plugins: {
+                        tooltip: {
+                            enabled: false,
+                        },
+                        datalabels: {
+                            display: false,
+                        },
+                        title: {
+                            display: true,
+                        },
+                        legend: {
+                            display: false,
+
+                        },
+                    },
+
+                    scales: {
+                        x: {
+                            stacked: true,
+                            display: false,
+                            beginAtZero: true,
+                            title: {
+                                display: false,
+                            },
+                        },
+                        y: {
+                            display: false,
+                            stacked: true,
+                            title: {
+                                display: false,
+                            },
+                        },
+                    },
+                };
+
+                const formatMainProfileBarData = (data) => {
+                    if (Boolean(data) === false) return null;
+
+                    const [executor, comunicador, analista, planejador] = data;
+                    const mainProfileDatasets = {
+                        datasets: [
+                            {
+                                label: "executor",
+                                data: [Number(executor.total)],
+                                backgroundColor: profileBarColors.executor,
+                                borderColor: profileBarColors.executor,
+                                borderRadius: () => {
+                                    return {
+                                        bottomLeft: 30,
+                                        topLeft: 30,
+                                        bottomRight: 0,
+                                        topRight: 0,
+                                    };
+                                },
+                                borderWidth: 2,
+                                borderSkipped: false,
+                                barThickness: 15,
+                            },
+                            {
+                                label: "comunicador",
+                                data: [Number(comunicador.total)],
+                                backgroundColor: profileBarColors.comunicador,
+                                barThickness: 15,
+                                borderColor: "transparent",
+                                borderSkipped: false,
+                            },
+                            {
+                                label: "planejador",
+                                data: [Number(planejador.total)],
+                                backgroundColor: profileBarColors.planejador,
+                                borderColor: "transparent",
+                                borderSkipped: false,
+                                barThickness: 15,
+                            },
+
+                            {
+                                label: "analista",
+                                data: [Number(analista.total)],
+                                backgroundColor: profileBarColors.analista,
+                                barThickness: 15,
+                                borderRadius: () => {
+                                    return {
+                                        bottomRight: 30,
+                                        topRight: 30,
+                                        bottomLeft: 0,
+                                        topLeft: 0,
+                                    };
+                                },
+                            },
+                        ],
+                        labels: [""],
+                    };
+
+                    return mainProfileDatasets;
+                };
+
+                function htmlLegendPluginProfilebar(data) {
+                    return {
+                        id: "htmlLegend",
+                        beforeDraw(chart) {
+                            const { ctx, chartArea } = chart;
+
+                            const badgeWidth = 50;
+                            const badgeHeight = 25;
+                            const labelTop = 45;
+                            const columns = chartArea.width / 4;
+
+                            const titleSize = 32;
+                            const titleColor = "#4F0572";
+
+                            ctx.textBaseline = "middle";
+                            ctx.textAlign = "center";
+
+                            ctx.beginPath();
+                            ctx.font = `bold ${titleSize}px Lexend`;
+                            ctx.fillStyle = titleColor;
+
+                            ctx.fillText(
+                                data.mainProfile,
+                                chartArea.width / 2,
+                                chartArea.height / 3 - titleSize / 2
+                            );
+
+                            ctx.closePath();
+
+                            mainProfileLabels.forEach((profile, index) => {
+                                const [datasetMeta] = chart.getDatasetMeta(index).data;
+                                ctx.beginPath();
+                                ctx.fillStyle = profileBarColors[profile];
+
+                                const centerElement = columns * (index + 1) - columns / 2;
+
+                                ctx.roundRect(
+                                    centerElement - badgeWidth / 2,
+                                    datasetMeta.y + labelTop,
+                                    badgeWidth,
+                                    badgeHeight,
+                                    10
+                                );
+                                ctx.fill();
+
+                                ctx.fillStyle = "#fff";
+                                ctx.font = "12px Lexend";
+
+                                const dados = data?.profiles.find((el) => el.label === profile);
+                                ctx.fillText(
+                                    `${Number(dados?.total).toFixed(2)}%`,
+                                    centerElement - badgeWidth / 2 + 25,
+                                    datasetMeta.y + labelTop + 13
+                                );
+
+                                ctx.fillStyle = profileBarColors[profile];
+                                ctx.font = "bold 14px Lexend";
+                                ctx.fillText(
+                                    profile.toUpperCase(),
+                                    centerElement,
+                                    datasetMeta.y + labelTop + 40
+                                );
+
+                                ctx.fillStyle = "#616161";
+                                ctx.font = "14px Lexend";
+                                ctx.fillText(
+                                    dados.level.toLocaleUpperCase(),
+                                    centerElement,
+                                    datasetMeta.y + labelTop + 60
+                                );
+                                ctx.closePath();
+                            });
+                        },
+                    };
+                };
+                const graphDataProfiler = JSON.parse(`{{ data.charts.profilerBar | json }}`);
+                const formattedData = formatMainProfileBarData(graphDataProfiler?.profiles);
+
+                const configProfileBar = {
+                    type: "bar",
+                    data: formattedData,
+                    options: profileBarOptions,
+                    plugins: [htmlLegendPluginProfilebar(graphDataProfiler)],
+                };
+                new Chart(ctxProfilerBar, { ...configProfileBar });
+            }
+            mountChartProfilerbar()
+
+            /** factorsByProfiler **/
+            const indicador = JSON.parse(`{{ data.charts.indicador | json}}`);
+            function mountChartFactorsByProfiler() {
+                const optionsFactors = {
+                    responsive: true,
+                    aspectRatio: 6,
+                    layout: {
+                        padding() {
+                            return {
+                                right: 70,
+                                left: 40,
+                            };
+                        },
+                    },
+                    plugins: {
+                        tooltip: {
+                            enabled: false,
+                        },
+                        datalabels: {
+                            display: true,
+                            /* eslint-disable*/
+                            formatter(value, context) {
+                                if (value.x[0].toFixed(1) < 1) {
+                                    return `+${Math.abs(value.x[0].toFixed(1))}`
+                                }
+                                return `- ${value.x[0].toFixed(1)}`;
+                            },
+                            align(context) {
+                                if (context.dataIndex === 1) return 'left';
+
+                                return 'right';
+                            },
+                            anchor(context) {
+                                if (context.dataIndex === 1) return 'start';
+
+                                return 'end';
+                            },
+                            color(context) {
+                                return profileBarColors[context.dataset.label];
+                            },
+                            font: {
+                                weight: 'bold',
+                                size: 14,
+                            },
+                        },
+                        title: {
+                            display: false,
+                        },
+                        legend: {
+                            display: false,
+                        },
+                    },
+                    animation: false,
+                    indexAxis: 'y',
+
+                    scales: {
+                        x: {
+                            stacked: true,
+                            title: {
+                                display: false,
+                            },
+
+                            grid: {
+                                color: '#ececec',
+                                tickBorderDash: [8, 4],
+                                lineWidth: 1,
+                            },
+
+                            border: {
+                                width: 0,
+                            },
+                            ticks: {
+                                color: '#e2e2e2',
+                            },
+                        },
+                        y: {
+                            stacked: true,
+                            title: {
+                                display: false,
+                            },
+
+                            display: false,
+                        },
+                    },
+                };
+
+                const factorProfileDatasets = (data) => {
+                    const { executor, planner, analyst, communicator } = data;
+
+                    return {
+                        datasets: [
+                            {
+                                label: 'executor',
+                                data: [
+                                    { x: [executor[1]], y: 'executor' },
+                                    { x: [-executor[0]], y: 'executor' },
+                                ],
+                                backgroundColor: ['#CA2037', '#470b13'],
+                                barThickness: 15,
+                                borderSkipped: false,
+                                borderRadius: (ctx) => {
+                                    if (ctx.dataIndex === 1)
+                                        return {
+                                            bottomRight: 0,
+                                            topRight: 0,
+                                            bottomLeft: 10,
+                                            topLeft: 10,
+                                        };
+                                    return {
+                                        bottomRight: 10,
+                                        topRight: 10,
+                                        bottomLeft: 0,
+                                        topLeft: 0,
+                                    };
+                                },
+                            },
+
+                            {
+                                label: 'planejador',
+                                data: [
+                                    { x: [planner[1]], y: 'planejador' },
+                                    { x: [-[planner[0]]], y: 'planejador' },
+                                ],
+                                backgroundColor: ['#00A760', '#0b5032'],
+                                barThickness: 15,
+                                borderSkipped: false,
+                                borderRadius: (ctx) => {
+                                    if (ctx.dataIndex === 1)
+                                        return {
+                                            bottomRight: 0,
+                                            topRight: 0,
+                                            bottomLeft: 10,
+                                            topLeft: 10,
+                                        };
+                                    return {
+                                        bottomRight: 10,
+                                        topRight: 10,
+                                        bottomLeft: 0,
+                                        topLeft: 0,
+                                    };
+                                },
+                            },
+                            {
+                                label: 'analista',
+                                data: [
+                                    { x: [analyst[1]], y: 'analista' },
+                                    { x: [-analyst[0]], y: 'analista' },
+                                ],
+                                backgroundColor: ['#2657ED', '#0e1e4e'],
+                                barThickness: 15,
+                                borderSkipped: false,
+                                borderRadius: (ctx) => {
+                                    if (ctx.dataIndex === 1)
+                                        return {
+                                            bottomRight: 0,
+                                            topRight: 0,
+                                            bottomLeft: 10,
+                                            topLeft: 10,
+                                        };
+                                    return {
+                                        bottomRight: 10,
+                                        topRight: 10,
+                                        bottomLeft: 0,
+                                        topLeft: 0,
+                                    };
+                                },
+                            },
+                            {
+                                label: 'comunicador',
+                                data: [
+                                    { x: [communicator[1]], y: 'comunicador' },
+                                    { x: [-communicator[0]], y: 'comunicador' },
+                                ],
+                                backgroundColor: ['#FFBA00', '#493a10'],
+                                barThickness: 15,
+                                borderSkipped: false,
+                                borderRadius: (ctx) => {
+                                    if (ctx.dataIndex === 1)
+                                        return {
+                                            bottomRight: 0,
+                                            topRight: 0,
+                                            bottomLeft: 10,
+                                            topLeft: 10,
+                                        };
+                                    return {
+                                        bottomRight: 10,
+                                        topRight: 10,
+                                        bottomLeft: 0,
+                                        topLeft: 0,
+                                    };
+                                },
+                            },
+                        ],
+                        labels: mainProfileLabels,
+                    };
+                }
+
+                const dataFactoryByProfiler = JSON.parse(`{{ data.charts.factoryByProfiler | json}}`);
+                const ctxFactorsByProfiler = document.getElementById("factorsByProfiler");
+
+                const configFactors = {
+                    type: "bar",
+                    data: factorProfileDatasets(dataFactoryByProfiler),
+                    options: optionsFactors,
+                };
+
+                new Chart(ctxFactorsByProfiler, { ...configFactors });
+            }
+
+            mountChartFactorsByProfiler();
+
+            const optionsIndicators = (customLabels, maxValueLine) => {
+                return {
+                    responsive: true,
+                    animation: false,
+                    aspectRatio: 2,
+                    indexAxis: "y",
+                    elements: {
+                        bar: {
+                            borderWidth: 5,
+                        },
+                    },
+                    plugins: {
+                        datalabels: {
+                            display: true,
+                            offset: 5,
+                            anchor: "start",
+                            align: "top",
+                            clamp: true,
+                            textAlign: "start",
+                            font: {
+                                size: 11,
+                                family: "Lexend",
+                                weight: 700,
+                            },
+                            color: "#4F0572",
+                            formatter: function (value, context) {
+                                const paddingLeft = 20;
+                                const labelText = customLabels[context.dataIndex];
+                                const paddedText =
+                                    " ".repeat(paddingLeft + labelText?.length) +
+                                    labelText?.padEnd(18, " ");
+                                return paddedText;
+                            },
+                        },
+                        legend: {
+                            display: false,
+                        },
+
+                        tooltip: {
+                            enabled: false,
+                        },
+                    },
+                    skipNull: true,
+                    scales: {
+                        y: {
+                            border: {
+                                display: false,
+                            },
+                            grid: {
+                                display: false,
+                            },
+                            ticks: {
+                                color: "#4F0572",
+                                font: {
+                                    size: 14,
+                                    family: "Lexend",
+                                    weight: "bold",
+                                },
+                                crossAlign: "far",
+                            },
+                        },
+                        x: {
+                            display: false,
+                            offset: true,
+                            max: maxValueLine,
+                            grid: {
+                                display: false,
+                            },
+                            border: {
+                                display: false
+                            },
+
+                        },
+                    },
+                };
+            }
+
+            function formatProfilerDistributionData(params) {
+                const labels = params.labels;
+                const datasets = [
+                    {
+                        data: params.data,
+                        backgroundColor: "#4F0572",
+                        borderRadius: 5,
+                        borderSkipped: false,
+                        barThickness: 10,
+                        borderWidth: 0,
+                    },
+                ];
+                return { datasets, labels };
+            }
+
+
+
+            const ctxIndicator = document.getElementById("indicators");
+
+            function mountChartIndicator() {
+                const formattedChartData = formatProfilerDistributionData({
+                    labels: indicador.labels,
+                    data: indicador.values,
+                });
+                const configIndicator = {
+                    type: "bar",
+                    data: {
+                        labels: formattedChartData.labels,
+                        datasets: formattedChartData.datasets,
+                    },
+                    options: { ...optionsIndicators(indicador.customLabels) },
+                }
+
+
+                new Chart(ctxIndicator, { ...configIndicator });
+            }
+            mountChartIndicator();
+
+
+            // Chart Requirement Flebility
+            const ctxRequirement = document.getElementById('requirement');
+            const chartDataRequirement = JSON.parse(`{{ data.charts.chartInterection.requirement | json}}`);
+
+            const ctxLeadership = document.getElementById('leadership');
+            const chartDataleadership = JSON.parse(`{{ data.charts.chartInterection.leadership | json}}`);
+
+            function mountChartRequirementLeadership() {
+                const customGripRequirement = {
+                    id: 'customGrip',
+                    beforeDraw(chart) {
+                        const { chartArea, ctx } = chart;
+                        const column = 3;
+                        const rows = 4;
+
+                        ctx.fillStyle = 'transparent';
+                        ctx.lineWidth = 4;
+                        ctx.strokeStyle = '#F4F0EB';
+
+                        ctx.roundRect(0, 0, chartArea.width + 10, chartArea.height, 10);
+                        ctx.stroke();
+
+                        const vLine = (chartArea.width / column);
+                        const hLine = chartArea.height / rows;
+
+                        for (let index = 0; index < column; index++) {
+                            ctx.moveTo(vLine * index, 0);
+                            ctx.lineTo(vLine * index, chartArea.height);
+                            ctx.stroke();
+                        }
+
+                        for (let index = 0; index < rows; index++) {
+                            ctx.moveTo(0, hLine * index);
+                            ctx.lineTo(chartArea.width, hLine * index);
+                            ctx.stroke();
+                        }
+                    },
+                };
+
+
+                const optionsRequirement = {
+                    aspectRatio: 1,
+                    animation: false,
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            display: false,
+                        },
+                        title: {
+                            display: false,
+                        },
+                        datalabels: {
+                            display: false,
+                        },
+                        tooltip: {
+                            displayColors: false,
+                            enabled: false,
+                        },
+                    },
+                    scales: {
+                        x: {
+                            display: false,
+
+                        },
+                        y: {
+                            display: false,
+                            beginAtZero: 50,
+                            max: 100,
+                        },
+                    },
+                };
+
+                const labels = ['Executor', 'Comunicador', 'Planejador', 'Analista'];
+
+                const formatterData = (data) => {
+                    const dataset = [
+                        {
+                            borderColor: '#4F0572',
+                            backgroundColor: '#4F0572',
+                            borderWidth: 4,
+                            pointStyle: 'circle',
+                            pointRadius: 6,
+                        },
+                        {
+                            borderColor: '#CA2037',
+                            backgroundColor: '#CA2037',
+                            borderWidth: 4,
+                            pointRotation: 0,
+                            pointStyle: 'rect',
+                            pointRadius: 6,
+                        },
+                        {
+                            borderColor: '#333333',
+                            backgroundColor: '#333333',
+                            borderWidth: 4,
+                            pointStyle: 'triangle',
+                            pointRadius: 6,
+                        },
+                    ];
+
+                    const chartData = {
+                        labels,
+                        datasets: data?.map((el, index) => {
+                            return {
+                                label: el.name,
+                                data: el.data,
+                                ...dataset[index],
+                            };
+                        }),
+                    };
+
+                    return chartData;
+                };
+                const maxValue = 100;
+                const halfValue = maxValue / 2
+                const formatedLine = (line = []) =>
+                    line.map(item =>
+                        item >= maxValue ? maxValue : halfValue - (item * -1)
+                    )
+
+                const dataRequirement = {
+                    labels: labels,
+                    datasets: [
+                        { data: formatedLine(chartDataRequirement[0].data) },
+                        { data: formatedLine(chartDataRequirement[1].data) },
+                        { data: formatedLine(chartDataRequirement[2].data) }
+                    ]
+                };
+
+                const dataLeadership = {
+                    labels: labels,
+                    datasets: [
+                        { data: formatedLine(chartDataleadership[0].data) },
+                        { data: formatedLine(chartDataleadership[1].data) },
+                        { data: formatedLine(chartDataleadership[2].data) }
+                    ]
+                };
+
+                const configRequirement = {
+                    type: 'line',
+                    options: { ...optionsRequirement },
+                    plugins: [customGripRequirement],
+                    data: formatterData(dataRequirement.datasets)
+                }
+
+                const configLeadership = {
+                    type: 'line',
+                    options: { ...optionsRequirement },
+                    plugins: [customGripRequirement],
+                    data: formatterData(dataLeadership.datasets)
+                }
+
+
+                new Chart(ctxRequirement, { ...configRequirement });
+                new Chart(ctxLeadership, { ...configLeadership });
+
+            }
+
+            mountChartRequirementLeadership();
+
+            // Chart competencies
+            const graphDataCompetence = JSON.parse(`{{ data.charts.competencies | json}}`);
+            function mountChartCompetencies() {
+                const MINIMUM_POINTS = 3;
+                const radarBackgroundCompetencies = {
+                    id: "radarBackgroundCompetenciesPlugin",
+                    beforeDraw({ boxes, ctx, scales }) {
+                        const scaleOptions = scales.r;
+                        const { xCenter, yCenter, drawingArea: radius, options } = scaleOptions;
+
+                        if (options?.grid?.circular) {
+                            ctx.arc(xCenter, yCenter, radius, 0, 2 * Math.PI);
+                        } else {
+                            const numPoints = boxes[1]._pointLabels?.length;
+                            if (!numPoints || numPoints < MINIMUM_POINTS) {
+                                return;
+                            }
+
+                            const pointAngle = 360 / numPoints;
+                            const drawPoints = [];
+                            for (let i = 0; i <= numPoints; i++) {
+                                // Calculate the angle (in radians) of the radius line to the x-axis.
+                                const radians = ((numPoints - i) * pointAngle + 90) * (Math.PI / 180);
+
+                                drawPoints.push({
+                                    x: xCenter + radius * Math.cos(radians),
+                                    y: yCenter + radius * Math.sin(radians) * -1,
+                                });
+                            }
+
+                            // Move to the starting point
+                            const { x, y } = drawPoints.pop();
+                            ctx.moveTo(x, y);
+                            ctx.beginPath();
+
+                            // Then connect all the remaining points
+                            drawPoints.forEach((point) => {
+                                ctx.lineTo(point.x, point.y);
+                            });
+                            ctx.closePath();
+                        }
+
+                        const colors = [
+                            "rgba(204, 227, 218, 1)",
+                            "rgba(192, 220, 237, 1)",
+                            "rgba(255, 214, 219, 1)",
+                            "rgba(255, 247, 205, 1)",
+                        ];
+                        const numColors = colors.length;
+                        const sectionAngle = 360 / numColors;
+
+                        for (let i = 0; i < numColors; i++) {
+
+                            ctx.fillStyle = colors[i];
+                            ctx.fill();
+                            ctx.beginPath();
+                            ctx.moveTo(xCenter, yCenter);
+                            ctx.arc(
+                                xCenter,
+                                yCenter,
+                                radius,
+                                i * sectionAngle * (Math.PI / 180),
+                                (i + 1) * sectionAngle * (Math.PI / 180)
+                            );
+                            ctx.closePath();
+                        }
+
+                        ctx.restore();
+                    },
+                };
+
+
+                const dataCompetencies = {
+                    labels: graphDataCompetence.labels,
+                    datasets: [
+                        {
+                            data: graphDataCompetence.guidelines,
+                            fill: true,
+                            backgroundColor: "rgba(94, 0, 90, 0.3)",
+                            borderColor: "#6B3077",
+                            tension: 0,
+
+                        },
+                    ],
+                };
+
+                const optionsdCompetencies = {
+                    aspectRatio: 1,
+                    animation: false,
+                    scales: {
+                        r: {
+                            grid: {
+                                circular: true,
+                                color: "#fff",
+                                lineWidth: 3,
+                            },
+                            angleLines: {
+                                color: "#fff",
+                                lineWidth: 2,
+                            },
+                            ticks: {
+                                display: false,
+                                stepSize: 26,
+                            },
+                            pointLabels: {
+                                color: "#601E82",
+                                font: {
+                                    size: 12,
+                                    style: "normal",
+                                    weight: "bold",
+                                },
+                            },
+                        },
+
+                    },
+                    plugins: {
+                        legend: {
+                            display: false,
+                        },
+
+                    },
+                    elements: {
+                        point: {
+                            radius: 0,
+                        },
+                        line: {
+                            borderWidth: 1,
+                        },
+                    },
+                };
+
+                const configCompetencies = {
+                    type: "radar",
+                    data: { ...dataCompetencies },
+                    options: { ...optionsdCompetencies },
+                    plugins: [radarBackgroundCompetencies],
+                };
+
+                const ctxCompetencies = document.getElementById("competencies");
+                new Chart(ctxCompetencies, { ...configCompetencies });
+
+            }
+
+            function mountChartCompetenciesIndicators() {
+                const formattedChartDataIndicator = formatProfilerDistributionData({
+                    labels: graphDataCompetence.labels,
+                    data: graphDataCompetence.skillLabelsValues,
+                })
+
+                const ctxCompetenciesIndicator = document.getElementById("competencies-indicators");
+                const confiCompetenciesIndicator = {
+                    type: "bar",
+                    data: {
+                        labels: formattedChartDataIndicator.labels,
+                        datasets: formattedChartDataIndicator.datasets,
+                    },
+                    options: { ...optionsIndicators(graphDataCompetence.customLabels), aspectRatio: 1 },
+                }
+
+                new Chart(ctxCompetenciesIndicator, { ...confiCompetenciesIndicator });
+
+            }
+            mountChartCompetencies();
+            mountChartCompetenciesIndicators()
+
+            const talentsAreaData = JSON.parse(`{{ data.charts.talentsArea | json}}`);
+            const { dy, dx, dy2, dx2 } = talentsAreaData;
+
+            const userPosition = {
+                top: dy * -4.636 + 142,
+                left: dx * 2.125 + 142,
+            }
+            const enviromentPosition = {
+                top: dy2 * -4.636 + 136,
+                left: dx2 * 2.125 + 136,
+            }
+
+
+            function formatedName(name = "") {
+                const splitName = name.split(" ");
+                const first = splitName[0];
+                let last = ""
+                if (splitName.length > 1) {
+                    last = splitName.pop()
+                }
+                return `${first} ${last || ""}`
+            }
+
+            function mountChartTalentsArea() {
+                const canvasTalentsArea = document.getElementById('talents');
+                const imageUser = `{{ data.imageUser }}`;
+
+                const ctxTalentsArea = canvasTalentsArea.getContext("2d");
+                const borderWidth = 1.5;
+
+
+                const columnsAndrows = 4;
+                const widthSpace = 200
+
+                const widthArea = (ctxTalentsArea.canvas.width - widthSpace) / columnsAndrows;
+                const heightArea = (ctxTalentsArea.canvas.height - widthSpace) / columnsAndrows;
+
+
+
+                const mountQuadrants = (context) => {
+
+                    context.fillStyle = "rgba(255,184,0,0.25)";
+                    context.fillRect(0, 0, widthArea, heightArea);
+                    context.fillRect(widthArea + borderWidth, 0, widthArea, heightArea);
+
+                    context.fillStyle = "rgba(38,199,64,0.25)";
+                    context.fillRect(widthArea * 2 + borderWidth, 0, widthArea, heightArea);
+                    context.fillRect(widthArea * 3 + borderWidth + 1, 0, widthArea, heightArea);
+
+                    context.fillStyle = "rgba(255,184,0,0.25)";
+                    context.fillRect(0, heightArea + borderWidth + 1, widthArea / 1.5, heightArea);
+                    context.fillRect(widthArea * .65 + borderWidth, heightArea + borderWidth + 1, widthArea / 1.5, heightArea);
+                    context.fillRect(widthArea * 1.35, heightArea + borderWidth + 1, widthArea / 1.5, heightArea);
+
+                    context.fillStyle = "rgba(38,199,64,0.25)";
+                    context.fillRect(widthArea * 2 + borderWidth, heightArea + borderWidth + 1, widthArea * 1.3, heightArea);
+                    context.fillStyle = "rgba(38,199,64,0.25);";
+                    context.fillRect(widthArea * 3.3 + borderWidth + 1, heightArea + borderWidth + 1, widthArea * .7, heightArea);
+                    context.fillStyle = "rgba(50, 160, 218, 0.25)";
+                    context.fillRect(widthArea * 3.3 + borderWidth + 1, heightArea * 2 + borderWidth + 1, widthArea * .7, heightArea);
+
+                    context.fillStyle = "rgba(240,81,37,0.25)";
+                    context.fillRect(0, heightArea * 2 + borderWidth + 1, widthArea, heightArea);
+                    context.fillRect(widthArea + borderWidth, heightArea * 2 + borderWidth + 1, widthArea, heightArea);
+
+                    context.fillStyle = "rgba(50,160,218,0.25)";
+                    context.fillRect(widthArea * 2 + borderWidth + 1, heightArea * 2 + borderWidth + 2, widthArea * 1.27, heightArea);
+                    context.fillStyle = "rgba(240,81,37,0.25)";
+
+                    context.fillRect(0, heightArea * 3 + borderWidth + 3, widthArea, heightArea);
+                    context.fillRect(widthArea + borderWidth, heightArea * 3 + borderWidth + 3, widthArea, heightArea);
+
+                    context.fillStyle = "rgba(50,160,218,0.25)";
+                    context.fillRect(widthArea * 2 + borderWidth, heightArea * 3 + borderWidth + 3, widthArea, heightArea);
+                    context.fillRect(widthArea * 3 + borderWidth + 1, heightArea * 3 + borderWidth + 3, widthArea, heightArea);
+                }
+
+                const mountNumberSquad = (context) => {
+                    context.fillStyle = "#601e82";
+                    context.font = "bold 20px Lexend";
+
+                    context.fillText("4", widthArea * .5, heightArea * .5);
+                    context.fillText("7", widthArea * 2, heightArea * .5);
+                    context.fillText("8", widthArea * 3.46, heightArea * .5);
+                    context.fillText("3", widthArea * 1 / 4, heightArea * 2.1);
+                    context.fillText("5", widthArea / 1.5, heightArea * 1.7);
+                    context.fillText("6", widthArea * 1.5, heightArea * 1.7);
+                    context.fillText("9", widthArea * 2.6, heightArea * 1.7);
+                    context.fillText("10", widthArea * 3.5, heightArea * 2);
+                    context.fillText("2", widthArea * 1.5, heightArea * 2.7);
+                    context.fillText("12", widthArea * 2.5, heightArea * 2.7);
+                    context.fillText("1", widthArea * .5, heightArea * 3.7);
+                    context.fillText("13", widthArea * 2, heightArea * 3.7);
+                    context.fillText("11", widthArea * 3.4, heightArea * 3.7);
+                }
+
+                function drawClippedImage(context, img, x, y, radius) {
+                    context.save();
+                    context.beginPath();
+                    context.arc(x, y, radius, 0, Math.PI * 2, true);
+                    context.closePath();
+                    context.clip();
+                    context.drawImage(img, x - radius, y - radius, radius * 2, radius * 2);
+                    context.restore();
+                }
+
+
+                const createArcUser = (context, { left, top }) => {
+                    context.beginPath();
+                    context.fillStyle = "rgb(96 30 130)";
+                    context.arc(left, top - 2, 14, 0, 2 * Math.PI, false);
+                    context.fill();
+
+
+                    context.fillStyle = "#fff";
+                    context.font = "bold 12px Lexend";
+                    context.textAlign = 'center';
+                    context.textBaseline = 'middle';
+                    context.fillText(`{{ data.initialName }}`, left, top - 1);
+                }
+
+                const createQuadrantEnviroment = (context, { left, top }) => {
+                    context.beginPath();
+                    context.fillStyle = "rgb(218, 34, 43)";
+                    context.roundRect(left, top, 13, 13, 2);
+                    context.fill();
+                }
+
+                mountNumberSquad(ctxTalentsArea);
+                mountQuadrants(ctxTalentsArea);
+                createQuadrantEnviroment(ctxTalentsArea, { left: enviromentPosition.left, top: enviromentPosition.top });
+                createArcUser(ctxTalentsArea, { left: userPosition.left, top: userPosition.top });
+
+                createArcUser(ctxTalentsArea, { left: 330, top: 240 });
+                createQuadrantEnviroment(ctxTalentsArea, { left: 323, top: 280 });
+
+                ctxTalentsArea.fillStyle = "rgb(96 30 130)";
+                ctxTalentsArea.font = "bold 12px Lexend";
+                ctxTalentsArea.textAlign = 'left';
+
+                ctxTalentsArea.fillText(formatedName(`{{ data.name }}`), 330 + 28, 240);
+
+                ctxTalentsArea.fillStyle = "rgb(218, 34, 43)";
+                ctxTalentsArea.font = "bold 12px Lexend";
+                ctxTalentsArea.textAlign = 'center';
+                ctxTalentsArea.fillText("Meio", 360, 287);
+
+            }
+
+
+
+            function mountIndicatorsTalentsArea() {
+                // Chart Talents Area Indicators
+                const auxDx1 = dx * 2.125 + 102;
+                const auxDy1 = dy * -4.636 + 102;
+                const auxDx2 = dx2 * 2.125 + 102;
+                const auxDy2 = dy2 * -4.636 + 102;
+
+                const getPositionsSkillTalents = (number, topLeft, bottomRight) => {
+                    const calculaSideRed = (arr = [topLeft, bottomRight], auxDx, auxDy) => {
+                        const result = arr.map(e => {
+                            return Math.sqrt(
+                                Math.pow(e.x - (auxDx + 47), 2) +
+                                Math.pow(e.y - (auxDy + 47), 2)
+                            );
+                        });
+
+                        const distance = Math.floor(Math.max(0, 8 - result / 30));
+
+                        return { resultRed: result[0], distanceRed: distance };
+                    };
+
+                    const calculaSideBlue = (
+                        arr = [topLeft, bottomRight],
+                        auxDx,
+                        auxDy
+                    ) => {
+                        const result = arr.map(e => {
+                            return Math.sqrt(
+                                Math.pow(e.x - (auxDx + 47), 2) +
+                                Math.pow(e.y - (auxDy + 47), 2)
+                            );
+                        });
+
+                        const distance = Math.floor(Math.max(0, 8 - result / 30));
+                        return { resultBlue: result[0], distanceBlue: distance };
+                    };
+
+                    const center = {
+                        x: (bottomRight.x + topLeft.x) / 2,
+                        y: (bottomRight.y + topLeft.y) / 2,
+                    };
+
+                    return {
+                        ...calculaSideRed([center], auxDx2, auxDy2),
+                        ...calculaSideBlue([center], auxDx1, auxDy1),
+                        center,
+                    };
+                };
+
+
+                const skillValuesTalentsIndicator = [
+                    {
+                        id: 'Comandante',
+                        number: 1,
+                        ...getPositionsSkillTalents(1, { x: 2, y: 227 }, { x: 73, y: 296 }),
+                    },
+                    {
+                        id: "Competidor",
+                        number: 2,
+                        ...getPositionsSkillTalents(2, { x: 77, y: 152 }, { x: 146, y: 221 }),
+                    },
+                    {
+                        id: "Administrador",
+                        number: 3,
+                        ...getPositionsSkillTalents(3, { x: 2, y: 150 }, { x: 71, y: 221 }),
+                    },
+                    {
+                        id: "Administrador-2",
+                        number: 3,
+                        ...getPositionsSkillTalents(3, { x: 2, y: 77 }, { x: 46, y: 148 }),
+                    },
+                    {
+                        id: 'Motivador',
+                        number: 4,
+                        ...getPositionsSkillTalents(4, { x: 2, y: 2 }, { x: 73, y: 71 }),
+                    },
+                    {
+                        id: 'Vendedor',
+                        number: 5,
+                        ...getPositionsSkillTalents(5, { x: 52, y: 77 }, { x: 96, y: 146 }),
+                    },
+                    {
+                        id: 'Diplomata',
+                        number: 6,
+                        ...getPositionsSkillTalents(6, { x: 102, y: 77 }, { x: 145, y: 146 }),
+                    },
+                    {
+                        id: 'Aconselhador',
+                        number: 7,
+                        ...getPositionsSkillTalents(7, { x: 77, y: 2 }, { x: 149, y: 70 })
+                    },
+                    {
+                        id: 'Aconselhador-2',
+                        number: 7,
+                        ...getPositionsSkillTalents(7, { x: 149, y: 2 }, { x: 221, y: 70 })
+                    },
+                    {
+                        id: 'Atendente',
+                        number: 8,
+                        ...getPositionsSkillTalents(8, { x: 225, y: 2 }, { x: 295, y: 70 }),
+                    },
+                    {
+                        id: 'Professoral',
+                        number: 9,
+                        ...getPositionsSkillTalents(9, { x: 150, y: 77 }, { x: 245, y: 146 }),
+                    },
+                    {
+                        id: 'Técnico',
+                        number: 10,
+                        ...getPositionsSkillTalents(10, { x: 249, y: 77 }, { x: 296, y: 148 }),
+                    },
+                    {
+                        id: 'Técnico-2',
+                        number: 10,
+                        ...getPositionsSkillTalents(10, { x: 249, y: 150 }, { x: 296, y: 221 }),
+                    },
+                    {
+                        id: 'Especialista',
+                        number: 11,
+                        ...getPositionsSkillTalents(11, { x: 218, y: 227 }, { x: 296, y: 296 }),
+                    },
+                    {
+                        id: 'Estrategista',
+                        number: 12,
+                        ...getPositionsSkillTalents(10, { x: 150, y: 152 }, { x: 245, y: 221 }),
+                    },
+                    {
+                        id: "Controlador",
+                        number: 13,
+                        ...getPositionsSkillTalents(13, { x: 150, y: 227 }, { x: 215, y: 296 }),
+                    },
+                    {
+                        id: "Controlador-2",
+                        number: 13,
+                        ...getPositionsSkillTalents(13, { x: 77, y: 227 }, { x: 148, y: 296 }),
+                    },
+
+                ];
+
+
+                const calcaDistanceValuesPoints = (blue, diff = 0) => (
+                    {
+                        0: 6,
+                        1: 100 * (1 / 7),
+                        2: 100 * (2 / 7),
+                        3: 100 * (3 / 7),
+                        4: 100 * (4 / 7),
+                        5: 100 * (5 / 7),
+                        6: 100 * (6 / 7),
+                        7: 100 * (7 / 7)
+                    }[blue || 0]) - diff;
+
+                const labelsLevel = JSON.parse(`{{ data.charts.labelsLevel  | json }}`)[0];
+                const level = (level) => labelsLevel[level] || "";
+
+
+
+                function htmlLegendPluginTalentsAreaIndicator(data) {
+                    const paddingLeft = 155;
+                    const widthReact = 13;
+                    return {
+                        id: "htmlLegendPluginTalentsAreaIndicator",
+                        afterDraw(chart) {
+                            const { ctx, chartArea } = chart;
+                            const centerPostionTop = chartArea.height / data.length;
+                            let paddingTop = Math.floor(centerPostionTop * .5 + widthReact * .5);
+
+
+
+                            const calcDiferentPoints = (number) => {
+                                const [distanceRedFirst, distanceRedSecond] = [skillValuesTalentsIndicator.filter(e => e.number === number)[0].resultRed,
+                                skillValuesTalentsIndicator.filter(e => e.number === number)[1].resultRed]
+                                return Math.floor(Math.max(0, 8 - (distanceRedFirst + distanceRedSecond) / 2 / 30))
+                            }
+
+
+                            data.forEach((item, index) => {
+                                const diffeCalc = [3, 7, 10, 13];
+
+                                const distanceRed = skillValuesTalentsIndicator.filter(skill => skill.id.trim() === item.trim()).map((skill, index) => {
+
+                                    if (!diffeCalc.includes(skill.number)) return skill;
+                                    return {
+                                        ...skill,
+                                        distanceRed: calcDiferentPoints(skill.number)
+                                    }
+
+
+                                });
+                                const left = ((chartArea.width - paddingLeft * .5) * calcaDistanceValuesPoints(distanceRed[0]?.distanceRed, 2)) / 100 + paddingLeft + widthReact
+                                ctx.beginPath();
+                                ctx.fillStyle = "rgb(218, 34, 43)";
+                                ctx.strokeStyle = "#fff";
+                                ctx.lineWidth = 1;
+                                ctx.roundRect(left, paddingTop, widthReact, widthReact, 2);
+                                ctx.stroke()
+                                ctx.fill();
+                                paddingTop = paddingTop + centerPostionTop;
+                            })
+                        },
+                        beforeDraw(chart) {
+                            const { ctx, chartArea } = chart;
+                            const centerPostionTop = chartArea.height / data.length;
+                            let paddingTop = Math.floor(centerPostionTop * .5 + widthReact * .5);
+                            data.forEach((item, index) => {
+                                ctx.beginPath();
+                                ctx.fillStyle = "rgb(239 237 243)";
+                                ctx.roundRect(paddingLeft + widthReact, paddingTop, chartArea.width - paddingLeft * .5, widthReact, 2);
+                                ctx.fill();
+                                paddingTop = paddingTop + centerPostionTop;
+                            })
+
+                        }
+                    };
+                };
+
+                const ctxTalentsIndicator = document.getElementById("talents-indicators");
+                const formattedChartDataTalentsIndicators = formatProfilerDistributionData({
+                    labels: talentsAreaData.indicators.labels,
+                    data: skillValuesTalentsIndicator.filter(item => talentsAreaData.indicators.labels.includes(item.id)).map(talents => calcaDistanceValuesPoints(talents.distanceBlue)
+                    )
+                })
+
+
+                const confiTalentsIndicator = {
+                    type: "bar",
+                    data: {
+                        labels: formattedChartDataTalentsIndicators.labels.map((item, index) => `${++index}. ${item}`),
+                        datasets: formattedChartDataTalentsIndicators.datasets,
+                    },
+                    options: { ...optionsIndicators(skillValuesTalentsIndicator.filter(item => talentsAreaData.indicators.labels.includes(item.id)).map(talents => level(talents.distanceBlue + 1)), 100), aspectRatio: 1.2 },
+                    plugins: [htmlLegendPluginTalentsAreaIndicator(formattedChartDataTalentsIndicators.labels)],
+                }
+
+                new Chart(ctxTalentsIndicator, { ...confiTalentsIndicator });
+            }
+
+            mountChartTalentsArea();
+            mountIndicatorsTalentsArea();
+
+        })
+    </script>
+
+</html>

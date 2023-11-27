@@ -1,0 +1,10 @@
+version: '3'
+services:
+  web-pdf:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+    - .:/pocPdf
+    ports:
+      - "3005:3005"
