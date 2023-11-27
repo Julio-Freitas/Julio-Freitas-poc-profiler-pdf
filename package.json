@@ -41,9 +41,6 @@
       "pre-commit": "npm run lint:commit"
     }
   },
-  "repository": {
-    "type": "git",
-    "url": "https://[secure]@github.com/Julio-Freitas/poc-profiler-pdf.git"
-  },
   "type": "module"
 }
+
