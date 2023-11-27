@@ -1,7 +1,7 @@
 {
   "name": "liquidtest",
   "version": "1.0.0",
-  "description": "",
+  "description": "generator pdf with puppeteer",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
