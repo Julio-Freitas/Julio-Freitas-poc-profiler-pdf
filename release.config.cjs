@@ -24,7 +24,7 @@ module.exports = {
                     'package-lock.json',
                     '.',
                 ],
-                message: 'chore(release): ${nextRelease.version} [skip ci]}',
+                message: 'chore(release): ${nextRelease.version} [skip ci]',
             },
         ],
     ],
