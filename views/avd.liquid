@@ -1,0 +1,579 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="true">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&display=swap"
+        crossorigin="true">
+    <link rel="preconnect" href="https://hr.solides.com/styles/theme.css" crossorigin="true">
+    <meta name="viewport" content="width=device-width">
+    <meta name="next-head-count" content="2">
+    <script defer src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://hr.solides.com/styles/tailwind.js"></script>
+    <style data-styled="active" data-styled-version="5.3.11">
+        :root {
+            --color-primary-100: 245 210 248;
+            --color-primary-300: 180 111 222;
+            --color-primary-500: 137 55 179;
+            --color-primary-700: 96 30 130;
+            --color-primary-900: 61 26 79;
+            --color-secondary-100: 245 233 245;
+            --color-secondary-300: 242 194 242;
+            --color-secondary-500: 206 74 206;
+            --color-secondary-700: 128 41 125;
+            --color-secondary-900: 94 0 90;
+            --color-info-100: 208 242 255;
+            --color-info-300: 116 202 255;
+            --color-info-500: 24 144 255;
+            --color-info-700: 12 83 183;
+            --color-info-900: 4 41 122;
+            --color-success-100: 233 252 212;
+            --color-success-300: 170 242 127;
+            --color-success-500: 84 214 44;
+            --color-success-700: 34 154 22;
+            --color-success-900: 8 102 13;
+            --color-warning-100: 255 247 205;
+            --color-warning-300: 255 225 106;
+            --color-warning-500: 255 193 7;
+            --color-warning-700: 183 129 3;
+            --color-warning-900: 122 79 1;
+            --color-error-100: 255 231 217;
+            --color-error-300: 255 164 141;
+            --color-error-500: 255 72 66;
+            --color-error-700: 183 33 54;
+            --color-error-900: 122 12 46;
+            --color-gray-100: 249 250 251;
+            --color-gray-200: 244 246 248;
+            --color-gray-300: 223 227 232;
+            --color-gray-400: 196 205 213;
+            --color-gray-500: 145 158 171;
+            --color-gray-600: 99 115 129;
+            --color-gray-700: 69 79 91;
+            --color-gray-800: 33 43 54;
+            --color-gray-900: 22 28 36;
+            --color-white: 255 255 255;
+            --color-facebook: 24 119 242;
+            --color-instagram: 224 45 105;
+            --color-linkedin: 0 126 187;
+            --color-twitter: 0 170 236;
+            --color-purpura-50: 255 198 255;
+            --color-purpura-100: 255 175 255;
+            --color-purpura-200: 251 153 255;
+            --color-purpura-300: 227 131 255;
+            --color-purpura-400: 203 109 255;
+            --color-purpura-500: 179 87 255;
+            --color-purpura-600: 155 64 235;
+            --color-purpura-700: 132 40 211;
+            --color-purpura-800: 108 8 189;
+            --color-purpura-900: 84 0 166;
+            --color-profiler-communicator: 255 186 0;
+            --color-profiler-executor: 202 32 55;
+            --color-profiler-planner: 0 167 96;
+            --color-profiler-analyst: 38 87 237
+        }
+
+        body {
+            font-family: "Lexend";
+            background-color: #f4f6f8;
+            height: 100%
+        }
+
+        @page {
+            margin: 0;
+            width: 210mm;
+            height: 270mm;
+            font-family: "Lexend";
+            size: portrait
+        }
+    </style>
+</head>
+
+<body>
+    <main class="p-6 bg-gray-200 w-full h-max">
+        <section class="mb-10">
+            <div class="bg-white shadow-md rounded-lg flex flex-col p-6">
+                <div class="flex flex-row justify-between w-full mb-6">
+                    <div class="flex flex-col">
+                        <h5 class="text-sm font-bold">
+                            {{data.cicle.name}}
+                        </h5>
+                        <h2 class="text-subtitle1 font-semibold text-gray-600">
+                            {{data.cicle.pattern}}
+                        </h2>
+                    </div>
+                    <div>
+                        {% case data.cicle.status %}
+                        {% when "active" %}
+                        <div
+                            class="py-1 px-2 text-caption font-regular rounded-md justify-center items-center bg-info-500/[0.16] text-info-700">
+                            {{translate.cicle.status}}
+                        </div>
+                        {% when "finished" %}
+                        <div
+                            class="py-1 px-2 text-caption font-regular rounded-md justify-center items-center bg-success-500/[0.16] text-success-700">
+                            {{translate.cicle.status}}
+                        </div>
+                        {% when "canceled" %}
+                        <div
+                            class="py-1 px-2 text-caption font-regular rounded-md justify-center items-center bg-error-500/[0.16] text-error-700">
+                            {{translate.cicle.status}}
+                        </div>
+                        {% when "scheduled" %}
+                        <div
+                            class="py-1 px-2 text-caption font-regular rounded-md justify-center items-center bg-warning-500/[0.16] text-warning-700">
+                            {{translate.cicle.status}}
+                        </div>
+                        {% endcase %}
+                    </div>
+                </div>
+                <div class="flex flex-row">
+                    <div class="flex flex-col basis-1/3">
+                        <h5 class="text-base font-bold text-gray-800">
+                            {{translate.cicle.created_at}}
+                        </h5>
+                        <h2 class="text-base font-regular text-gray-600">
+                            {{data.cicle.start_date}}
+                        </h2>
+                    </div>
+                    <div class="flex flex-col basis-1/3">
+                        <h5 class="text-base font-bold text-gray-800">
+                            {{translate.cicle.deadline}}
+                        </h5>
+                        <h2 class="text-base font-regular text-gray-600">
+                            {{data.cicle.deadline}}
+                        </h2>
+                    </div>
+                    <div class="flex flex-col basis-1/3">
+                        <h5 class="text-base font-bold text-gray-800">
+                            {{translate.cicle.scale}}
+                        </h5>
+                        <h2 class="text-base font-regular text-gray-600">
+                            {{data.cicle.scale_number}} estrelas
+                        </h2>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="mb-10">
+            <div class="bg-white shadow-md rounded-lg p-6">
+                <div class="flex items-center gap-2 mb-6">
+                    {% if data.evaluated.picture != null %}
+                    <img src="{{data.evaluated.picture}}" class="styles__Avatar-apixk0-2 gmsNUF">
+                    {% else %}
+                    <div class="w-12 h-12 rounded-full bg-gray-300 flex items-center justify-center">
+                        <span class="text-primary-700">{{data.evaluated.initials}}</span>
+                    </div>
+                    {% endif %}
+                    <div class="flex-1">
+                        <h2 class="text-base font-bold text-gray-800">
+                            {{data.evaluated.name}}
+                        </h2>
+                        <p class="font-body text-body2 font-regular text-gray-600">
+                            {{data.evaluated.position}}</p>
+                    </div>
+                    {% if data.evaluated.profiler != empty string %}
+                    {% case data.evaluated.profiler %}
+                    {% when "A" %}
+                    <div class="rounded-full flex items-center justify-center border-transparent bg-origin-border w-[48px] h-[48px] text-xs font-bold border-4 text-primary-700"
+                        style="background-clip:content-box,border-box;background-image:linear-gradient(white,white),linear-gradient(0deg,#0ea2d0 50%,#0ea2d0 50%)">
+                        {{data.evaluated.profiler}}
+                    </div>
+                    {% when "P" %}
+                    <div class="rounded-full flex items-center justify-center border-transparent bg-origin-border w-[48px] h-[48px] text-xs font-bold border-4 text-primary-700"
+                        style="background-clip:content-box,border-box;background-image:linear-gradient(white,white),linear-gradient(0deg,#26c740 50%,#26c740 50%)">
+                        {{data.evaluated.profiler}}
+                    </div>
+                    {% when "C" %}
+                    <div class="rounded-full flex items-center justify-center border-transparent bg-origin-border w-[48px] h-[48px] text-xs font-bold border-4 text-primary-700"
+                        style="background-clip:content-box,border-box;background-image:linear-gradient(white,white),linear-gradient(0deg,#ffb800 50%,#ffb800 50%)">
+                        {{data.evaluated.profiler}}
+                    </div>
+                    {% when "E" %}
+                    <div class="rounded-full flex items-center justify-center border-transparent bg-origin-border w-[48px] h-[48px] text-xs font-bold border-4 text-primary-700"
+                        style="background-clip:content-box,border-box;background-image:linear-gradient(white,white),linear-gradient(0deg,#da222b 50%,#da222b 50%)">
+                        {{data.evaluated.profiler}}
+                    </div>
+                    {% when "AP" %}
+                    <div class="rounded-full flex items-center justify-center border-transparent bg-origin-border w-[48px] h-[48px] text-xs font-bold border-4 text-primary-700"
+                        style="background-clip:content-box,border-box;background-image:linear-gradient(white,white),linear-gradient(90deg,#0ea2d0 0,#26c740 100%)">
+                        {{data.evaluated.profiler}}
+                    </div>
+                    {% when "AC" %}
+                    <div class="rounded-full flex items-center justify-center border-transparent bg-origin-border w-[48px] h-[48px] text-xs font-bold border-4 text-primary-700"
+                        style="background-clip:content-box,border-box;background-image:linear-gradient(white,white),linear-gradient(90deg,#0ea2d0 0,#ffb800 100%)">
+                        {{data.evaluated.profiler}}
+                    </div>
+                    {% when "AE" %}
+                    <div class="rounded-full flex items-center justify-center border-transparent bg-origin-border w-[48px] h-[48px] text-xs font-bold border-4 text-primary-700"
+                        style="background-clip:content-box,border-box;background-image:linear-gradient(white,white),linear-gradient(90deg,#0ea2d0 0,#da222b 100%)">
+                        {{data.evaluated.profiler}}
+                    </div>
+                    {% when "PA" %}
+                    <div class="rounded-full flex items-center justify-center border-transparent bg-origin-border w-[48px] h-[48px] text-xs font-bold border-4 text-primary-700"
+                        style="background-clip:content-box,border-box;background-image:linear-gradient(white,white),linear-gradient(90deg,#26c740 0,#0ea2d0 100%)">
+                        {{data.evaluated.profiler}}
+                    </div>
+                    {% when "PC" %}
+                    <div class="rounded-full flex items-center justify-center border-transparent bg-origin-border w-[48px] h-[48px] text-xs font-bold border-4 text-primary-700"
+                        style="background-clip:content-box,border-box;background-image:linear-gradient(white,white),linear-gradient(90deg,#26c740 0,#ffb800 100%)">
+                        {{data.evaluated.profiler}}
+                    </div>
+                    {% when "PE" %}
+                    <div class="rounded-full flex items-center justify-center border-transparent bg-origin-border w-[48px] h-[48px] text-xs font-bold border-4 text-primary-700"
+                        style="background-clip:content-box,border-box;background-image:linear-gradient(white,white),linear-gradient(90deg,#26c740 0,#ffb800 100%)">
+                        {{data.evaluated.profiler}}
+                    </div>
+                    {% when "CA" %}
+                    <div class="rounded-full flex items-center justify-center border-transparent bg-origin-border w-[48px] h-[48px] text-xs font-bold border-4 text-primary-700"
+                        style="background-clip:content-box,border-box;background-image:linear-gradient(white,white),linear-gradient(90deg,#ffb800 0,#0ea2d0 100%)">
+                        {{data.evaluated.profiler}}
+                    </div>
+                    {% when "CP" %}
+                    <div class="rounded-full flex items-center justify-center border-transparent bg-origin-border w-[48px] h-[48px] text-xs font-bold border-4 text-primary-700"
+                        style="background-clip:content-box,border-box;background-image:linear-gradient(white,white),linear-gradient(90deg,#ffb800 0,#26c740 100%)">
+                        {{data.evaluated.profiler}}
+                    </div>
+                    {% when "CE" %}
+                    <div class="rounded-full flex items-center justify-center border-transparent bg-origin-border w-[48px] h-[48px] text-xs font-bold border-4 text-primary-700"
+                        style="background-clip:content-box,border-box;background-image:linear-gradient(white,white),linear-gradient(90deg,#ffb800 0,#da222b 100%)">
+                        {{data.evaluated.profiler}}
+                    </div>
+                    {% when "EA" %}
+                    <div class="rounded-full flex items-center justify-center border-transparent bg-origin-border w-[48px] h-[48px] text-xs font-bold border-4 text-primary-700"
+                        style="background-clip:content-box,border-box;background-image:linear-gradient(white,white),linear-gradient(90deg,#da222b 0,#0ea2d0 100%)">
+                        {{data.evaluated.profiler}}
+                    </div>
+                    {% when "EC" %}
+                    <div class="rounded-full flex items-center justify-center border-transparent bg-origin-border w-[48px] h-[48px] text-xs font-bold border-4 text-primary-700"
+                        style="background-clip:content-box,border-box;background-image:linear-gradient(white,white),linear-gradient(90deg,#da222b 0,#ffb800 100%)">
+                        {{data.evaluated.profiler}}
+                    </div>
+                    {% when "EP" %}
+                    <div class="rounded-full flex items-center justify-center border-transparent bg-origin-border w-[48px] h-[48px] text-xs font-bold border-4 text-primary-700"
+                        style="background-clip:content-box,border-box;background-image:linear-gradient(white,white),linear-gradient(90deg,#da222b 0,#26c740 100%)">
+                        {{data.evaluated.profiler}}
+                    </div>
+                    {% when "APC" %}
+                    <div class="rounded-full flex items-center justify-center border-transparent bg-origin-border w-[48px] h-[48px] text-xs font-bold border-4 text-primary-700"
+                        style="background-clip:content-box,border-box;background-image:linear-gradient(white,white),linear-gradient(90deg,#0ea2d0 0,#26c740 50%,#ffb800 100%)">
+                        {{data.evaluated.profiler}}
+                    </div>
+                    {% when "APE" %}
+                    <div class="rounded-full flex items-center justify-center border-transparent bg-origin-border w-[48px] h-[48px] text-xs font-bold border-4 text-primary-700"
+                        style="background-clip:content-box,border-box;background-image:linear-gradient(white,white),linear-gradient(90deg,#0ea2d0 0,#26c740 50%,#da222b 100%)">
+                        {{data.evaluated.profiler}}
+                    </div>
+                    {% when "ACP" %}
+                    <div class="rounded-full flex items-center justify-center border-transparent bg-origin-border w-[48px] h-[48px] text-xs font-bold border-4 text-primary-700"
+                        style="background-clip:content-box,border-box;background-image:linear-gradient(white,white),linear-gradient(90deg,#0ea2d0 0,#ffb800 50%,#26c740 100%)">
+                        {{data.evaluated.profiler}}
+                    </div>
+                    {% when "ACE" %}
+                    <div class="rounded-full flex items-center justify-center border-transparent bg-origin-border w-[48px] h-[48px] text-xs font-bold border-4 text-primary-700"
+                        style="background-clip:content-box,border-box;background-image:linear-gradient(white,white),linear-gradient(90deg,#0ea2d0 0,#ffb800 50%,#da222b 100%)">
+                        {{data.evaluated.profiler}}
+                    </div>
+                    {% when "AEP" %}
+                    <div class="rounded-full flex items-center justify-center border-transparent bg-origin-border w-[48px] h-[48px] text-xs font-bold border-4 text-primary-700"
+                        style="background-clip:content-box,border-box;background-image:linear-gradient(white,white),linear-gradient(90deg,#0ea2d0 0,#da222b 50%,#26c740 100%)">
+                        {{data.evaluated.profiler}}
+                    </div>
+                    {% when "PAC" %}
+                    <div class="rounded-full flex items-center justify-center border-transparent bg-origin-border w-[48px] h-[48px] text-xs font-bold border-4 text-primary-700"
+                        style="background-clip:content-box,border-box;background-image:linear-gradient(white,white),linear-gradient(90deg,#26c740 0,#0ea2d0 50%,#ffb800 100%)">
+                        {{data.evaluated.profiler}}
+                    </div>
+                    {% when "PAE" %}
+                    <div class="rounded-full flex items-center justify-center border-transparent bg-origin-border w-[48px] h-[48px] text-xs font-bold border-4 text-primary-700"
+                        style="background-clip:content-box,border-box;background-image:linear-gradient(white,white),linear-gradient(90deg,#26c740 0,#0ea2d0 50%,#da222b 100%)">
+                        {{data.evaluated.profiler}}
+                    </div>
+                    {% when "CAP" %}
+                    <div class="rounded-full flex items-center justify-center border-transparent bg-origin-border w-[48px] h-[48px] text-xs font-bold border-4 text-primary-700"
+                        style="background-clip:content-box,border-box;background-image:linear-gradient(white,white),linear-gradient(90deg,#ffb800 0,#0ea2d0 50%,#26c740 100%)">
+                        {{data.evaluated.profiler}}
+                    </div>
+                    {% when "CAE" %}
+                    <div class="rounded-full flex items-center justify-center border-transparent bg-origin-border w-[48px] h-[48px] text-xs font-bold border-4 text-primary-700"
+                        style="background-clip:content-box,border-box;background-image:linear-gradient(white,white),linear-gradient(90deg,#ffb800 0,#0ea2d0 50%,#da222b 100%)">
+                        {{data.evaluated.profiler}}
+                    </div>
+                    {% when "EAP" %}
+                    <div class="rounded-full flex items-center justify-center border-transparent bg-origin-border w-[48px] h-[48px] text-xs font-bold border-4 text-primary-700"
+                        style="background-clip:content-box,border-box;background-image:linear-gradient(white,white),linear-gradient(90deg,#da222b 0,#0ea2d0 50%,#26c740 100%)">
+                        {{data.evaluated.profiler}}
+                    </div>
+                    {% when "EAC" %}
+                    <div class="rounded-full flex items-center justify-center border-transparent bg-origin-border w-[48px] h-[48px] text-xs font-bold border-4 text-primary-700"
+                        style="background-clip:content-box,border-box;background-image:linear-gradient(white,white),linear-gradient(90deg,#da222b 0,#0ea2d0 50%,#ffb800 100%)">
+                        {{data.evaluated.profiler}}
+                    </div>
+                    {% when "AEC" %}
+                    <div class="rounded-full flex items-center justify-center border-transparent bg-origin-border w-[48px] h-[48px] text-xs font-bold border-4 text-primary-700"
+                        style="background-clip:content-box,border-box;background-image:linear-gradient(white,white),linear-gradient(90deg,#0ea2d0 0,#da222b 50%,#ffb800 100%)">
+                        {{data.evaluated.profiler}}
+                    </div>
+                    {% when "PEC" %}
+                    <div class="rounded-full flex items-center justify-center border-transparent bg-origin-border w-[48px] h-[48px] text-xs font-bold border-4 text-primary-700"
+                        style="background-clip:content-box,border-box;background-image:linear-gradient(white,white),linear-gradient(90deg,#26c740 0,#da222b 50%,#ffb800 100%)">
+                        {{data.evaluated.profiler}}
+                    </div>
+                    {% when "PEA" %}
+                    <div class="rounded-full flex items-center justify-center border-transparent bg-origin-border w-[48px] h-[48px] text-xs font-bold border-4 text-primary-700"
+                        style="background-clip:content-box,border-box;background-image:linear-gradient(white,white),linear-gradient(90deg,#26c740 0,#da222b 50%,#0ea2d0 100%)">
+                        {{data.evaluated.profiler}}
+                    </div>
+                    {% when "CEP" %}
+                    <div class="rounded-full flex items-center justify-center border-transparent bg-origin-border w-[48px] h-[48px] text-xs font-bold border-4 text-primary-700"
+                        style="background-clip:content-box,border-box;background-image:linear-gradient(white,white),linear-gradient(90deg,#ffb800 0,#da222b 50%,#26c740 100%)">
+                        {{data.evaluated.profiler}}
+                    </div>
+                    {% when "CEA" %}
+                    <div class="rounded-full flex items-center justify-center border-transparent bg-origin-border w-[48px] h-[48px] text-xs font-bold border-4 text-primary-700"
+                        style="background-clip:content-box,border-box;background-image:linear-gradient(white,white),linear-gradient(90deg,#ffb800 0,#da222b 50%,#0ea2d0 100%)">
+                        {{data.evaluated.profiler}}
+                    </div>
+                    {% when "ECP" %}
+                    <div class="rounded-full flex items-center justify-center border-transparent bg-origin-border w-[48px] h-[48px] text-xs font-bold border-4 text-primary-700"
+                        style="background-clip:content-box,border-box;background-image:linear-gradient(white,white),linear-gradient(90deg,#da222b 0,#ffb800 50%,#26c740 100%)">
+                        {{data.evaluated.profiler}}
+                    </div>
+                    {% when "PCA" %}
+                    <div class="rounded-full flex items-center justify-center border-transparent bg-origin-border w-[48px] h-[48px] text-xs font-bold border-4 text-primary-700"
+                        style="background-clip:content-box,border-box;background-image:linear-gradient(white,white),linear-gradient(90deg,#26c740 0,#ffb800 50%,#0ea2d0 100%)">
+                        {{data.evaluated.profiler}}
+                    </div>
+                    {% when "PCE" %}
+                    <div class="rounded-full flex items-center justify-center border-transparent bg-origin-border w-[48px] h-[48px] text-xs font-bold border-4 text-primary-700"
+                        style="background-clip:content-box,border-box;background-image:linear-gradient(white,white),linear-gradient(90deg,#26c740 0,#ffb800 50%,#da222b 100%)">
+                        {{data.evaluated.profiler}}
+                    </div>
+                    {% when "CPA" %}
+                    <div class="rounded-full flex items-center justify-center border-transparent bg-origin-border w-[48px] h-[48px] text-xs font-bold border-4 text-primary-700"
+                        style="background-clip:content-box,border-box;background-image:linear-gradient(white,white),linear-gradient(90deg,#ffb800 0,#26c740 50%,#0ea2d0 100%)">
+                        {{data.evaluated.profiler}}
+                    </div>
+                    {% when "CPE" %}
+                    <div class="rounded-full flex items-center justify-center border-transparent bg-origin-border w-[48px] h-[48px] text-xs font-bold border-4 text-primary-700"
+                        style="background-clip:content-box,border-box;background-image:linear-gradient(white,white),linear-gradient(90deg,#ffb800 0,#26c740 50%,#da222b 100%)">
+                        {{data.evaluated.profiler}}
+                    </div>
+                    {% when "EPA" %}
+                    <div class="rounded-full flex items-center justify-center border-transparent bg-origin-border w-[48px] h-[48px] text-xs font-bold border-4 text-primary-700"
+                        style="background-clip:content-box,border-box;background-image:linear-gradient(white,white),linear-gradient(90deg,#da222b 0,#26c740 50%,#0ea2d0 100%)">
+                        {{data.evaluated.profiler}}
+                    </div>
+                    {% when "EPC" %}
+                    <div class="rounded-full flex items-center justify-center border-transparent bg-origin-border w-[48px] h-[48px] text-xs font-bold border-4 text-primary-700"
+                        style="background-clip:content-box,border-box;background-image:linear-gradient(white,white),linear-gradient(90deg,#da222b 0,#26c740 50%,#ffb800 100%)">
+                        {{data.evaluated.profiler}}
+                    </div>
+                    {% when "ECA" %}
+                    <div class="rounded-full flex items-center justify-center border-transparent bg-origin-border w-[48px] h-[48px] text-xs font-bold border-4 text-primary-700"
+                        style="background-clip:content-box,border-box;background-image:linear-gradient(white,white),linear-gradient(90deg,#da222b 0,#ffb800 50%,#0ea2d0 100%)">
+                        {{data.evaluated.profiler}}
+                    </div>
+                    {% endcase %}
+                    {% endif %}
+                </div>
+                <div class="flex flex-row">
+                    <div class="flex flex-col basis-1/3">
+                        <h2 class="text-base font-bold text-gray-800">
+                            {{translate.evaluated.department}}
+                        </h2>
+                        <p class="font-regular text-base text-gray-600">
+                            {{data.evaluated.department}}
+                        </p>
+                    </div>
+                    <div class="flex flex-col basis-1/3">
+                        <h2 class="text-base font-bold text-gray-800">
+                            {{translate.evaluated.employed_since}}
+                        </h2>
+                        <p class="font-regular text-base text-gray-600">
+                            {{data.evaluated.employed_since}}
+                        </p>
+                    </div>
+                    <div class="flex flex-col basis-1/3">
+                        <h2 class="text-base font-bold text-gray-800">
+                            {{translate.evaluated.direct_leader}}
+                        </h2>
+                        <p class="font-regular text-base text-gray-600">
+                            {{data.evaluated.direct_leader}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        {% if data.moderator.hasModerated == true %}
+        <section class="mb-10">
+            <div class="text-ellipsis  overflow-hidden rounded-lg w-full justify-between break-inside-avoid flex py-3.5 bg-error-100 text-error-900">
+                <div class="flex items-center">
+                    <div class="mx-4 flex">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M10 0C4.47715 0 0 4.47715 0 10C0 15.5228 4.47715 20 10 20C15.5228 20 20 15.5228 20 10C20 7.34784 18.9464 4.8043 17.0711 2.92893C15.1957 1.05357 12.6522 0 10 0ZM10 15C9.44771 15 9 14.5523 9 14C9 13.4477 9.44771 13 10 13C10.5523 13 11 13.4477 11 14C11 14.5523 10.5523 15 10 15ZM10 12C10.5523 12 11 11.5523 11 11V6C11 5.44772 10.5523 5 10 5C9.44771 5 9 5.44772 9 6V11C9 11.5523 9.44771 12 10 12Z"
+                                fill="#FF4842" />
+                        </svg>
+                    </div>
+                    {{data.moderator.description}}
+                </div>
+            </div>
+        </section>
+        {% endif %}
+        <section class="mb-10">
+            <div class="bg-white shadow-md rounded-lg flex p-6 flex-col">
+                <h5 class="text-sm font-bold col-span-2 text-center pb-6 text-gray-600 ">
+                  AA  {{translate.average_ratings.evaluation_deadline}} {{data.average_ratings.start_date}}
+                    {{data.average_ratings.end_date}}
+                </h5>
+                <div class="grid grid-cols-2">
+                    <div class="flex flex-col items-center justify-around">
+                        <h2 class="text-center font-semibold text-gray-700">
+                            {{translate.average_ratings.collaborator_note_title}}
+                        </h2>
+                        <h2 class="text-center mb-2 text-gray-600">
+                            {{translate.average_ratings.collaborator_note_subtitle}}</h2>
+                        <div class="rounded-full flex items-center justify-center text-gray-400 w-[170px] h-[170px] bg-primary-700"
+                            style="background-image:conic-gradient(transparent {{data.average_ratings.evaluated_average | prepend: " "}},currentcolor 0)">
+                            <div class="rounded-full w-[140px] h-[140px] flex items-center justify-center bg-white">
+                                <h3 class="text-3xl font-bold text-primary-700">
+                                    {{data.average_ratings.evaluated_average}}
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-center justify-around">
+                        <h2 class="text-center font-semibold text-gray-700">
+                            {{translate.average_ratings.position_note_title}}
+                        </h2>
+                        <h2 class="text-center mb-2 text-gray-600">{{translate.average_ratings.position_note_subtitle}}
+                        </h2>
+                        <div class="rounded-full flex items-center justify-center text-gray-400 w-[170px] h-[170px] bg-primary-700"
+                            style="background-image:conic-gradient(transparent {{data.average_ratings.position_average  | prepend: " "}},currentcolor 0)">
+                            <div class="rounded-full w-[140px] h-[140px] flex items-center justify-center bg-white">
+                                <h3 class="text-3xl font-bold text-primary-700">
+                                    {{data.average_ratings.position_average}}
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="mt-10 break-before-page break-after-page">
+            <div class="bg-white shadow-md rounded-lg p-6 flex flex-col">
+                <h5 class="break-inside-avoid font-body font-bold text-sm mb-6 text-gray-800 ">
+                    {{translate.skill_ratings.title}}</h5>
+                {% for skill_group in data.skill_ratings.skill_group %}
+                <div class="flex flex-row items-center space-x-3 items-center ml-6">
+                    <h2
+                        class="max-w-[80%] break-inside-avoid font-body text-xs font-bold text-primary text-ellipsis overflow-hidden break-all">
+                        {{skill_group.name }}
+                    </h2>
+                    <div class="w-0.5 h-6 bg-gray-300"></div>
+                    <span class="w-[170px] break-inside-avoid font-body text-subtitle2 font-semi-bold text-gray-600 ">
+                        {{translate.skill_ratings.skill_group_subtitle}} {{skill_group.average}}
+                    </span>
+                </div>
+                <div class="divide-y divide-dashed divide-gray-300">
+                    {% for skill in data.skill_ratings.skill %}
+                    {% if skill_group.id == skill.id %}
+                    <div class="flex flex-row space-x-8 pb-6 mb-4 break-inside-avoid-page">
+                        <div class="flex flex-col w-full mt-2">
+                            {%if skill.evaluated_average != "0%" %}
+                            <div class="flex flex-col w-full px-12">
+                                <h5
+                                    class="break-inside-avoid font-body text-subtitle1 font-semi-bold text-gray-800 mb-1 text-ellipsis overflow-hidden break-all">
+                                    {{skill.name  }}
+                                </h5>
+                                <p class="text-gray-600 text-body2 mb-6">
+                                    {{skill.description | newline_to_br}}
+                                </p>
+
+                                <div class="flex flex-row items-center">
+                                    <div class="flex flex-col w-full mr-8">
+                                        <div class="flex flex-row items-center justify-between w-full mr-8">
+                                            <div class="flex flex-col space-y-3 w-full">
+                                                {% for rates in data.skill_ratings.rates %}
+                                                {% if rates.id == skill.rate_id %}
+
+                                                <div class="flex flex-row items-center">
+                                                    <span class="w-[100px] text-caption mr-3">{{rates.evaluator}}</span>
+                                                    <div class="w-[170px] h-10 relative bg-gray-300">
+                                                        <div
+                                                            class="h-10 relative flex items-center {{rates.bg}} w-[{{rates.width}}]">
+                                                            <span
+                                                                class="absolute left-4 text-caption font-regular">{{rates.rate}}</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                {% endif %}
+                                                {% endfor %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col w-full">
+                                        {% if skill.evaluated_average != "0%"  %}
+                                        <div class="flex flex-row items-center w-full justify-between mb-4">
+                                            <h2 class="w-[100px] text-caption mr-3">
+                                                {{translate.skill_ratings.position_general_note}}
+                                            </h2>
+                                            <div class="w-[170px] h-10 relative bg-gray-300">
+                                                <div
+                                                    class="h-10 flex items-center bg-purpura-500 w-[{{skill.evaluated_average}}]">
+                                                    <span
+                                                        class="absolute left-4 text-caption font-regular">{{skill.evaluated_average}}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="flex flex-row items-center w-full justify-between">
+                                            <h2 class="w-[100px] text-caption mr-3">
+                                                {{translate.skill_ratings.position_note_average}}
+                                            </h2>
+                                            <div class="w-[170px] h-10 relative bg-gray-300">
+                                                <div
+                                                    class="h-10 flex items-center bg-purpura-400 w-[{{skill.position_average}}]">
+                                                    <span
+                                                        class="absolute left-4 text-caption font-regular">{{skill.position_average}}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+        {% if data.comments.size > 0 %}
+        <section class="mt-10">
+            <div class="bg-white shadow-md rounded-lg flex flex-col">
+                <h5 class="font-bold text-sm p-6 border-b border-gray-300 text-gray-800">
+                    {{translate.comments.title}}
+                </h5>
+                <div class="divide-y divide-gray-300">
+                    {% for comments in data.comments %}
+                    <div class="break-inside-avoid py-6">
+                        <div class="px-6">
+                            <h5 class="font-semibold text-base text-gray-800">{{comments.evaluator}}</h5>
+                            <span class="mb-2 text-caption font-regular">{{comments.date}}</span>
+                            <p class="text-body2 mt-2 text-gray-600">{{comments.description}}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+        {% endif %}
+    </main>
+</body>
+
+</html>
