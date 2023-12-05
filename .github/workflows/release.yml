@@ -35,11 +35,3 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npx semantic-release
-
-      - name: Update version in package.json
-        run: npm version patch -m "Bump version to %s [skip ci]"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Push changes and tags
-        run: git push && git push --tags
