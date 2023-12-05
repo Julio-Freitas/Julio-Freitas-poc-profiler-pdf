@@ -34,12 +34,5 @@ jobs:
       - name: Semantic Release
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run:  npx semantic-release | tee semantic-release.log
+        run:  npx semantic-release
 
-      - name: Update Package Version
-        run: |
-            latest_version=$(git describe --tags --abbrev=0)
-            npm version $latest_version --allow-same-version
-            git push
-        env:
-            GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
