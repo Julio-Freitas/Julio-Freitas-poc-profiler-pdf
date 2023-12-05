@@ -407,7 +407,8 @@
         </section>
         {% if data.moderator.hasModerated == true %}
         <section class="mb-10">
-            <div class="text-ellipsis  overflow-hidden rounded-lg w-full justify-between break-inside-avoid flex py-3.5 bg-error-100 text-error-900">
+            <div
+                class="text-ellipsis overflow-hidden rounded-lg w-full justify-between break-inside-avoid flex py-3.5 bg-error-100 text-error-900">
                 <div class="flex items-center">
                     <div class="mx-4 flex">
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -423,8 +424,8 @@
         {% endif %}
         <section class="mb-10">
             <div class="bg-white shadow-md rounded-lg flex p-6 flex-col">
-                <h5 class="text-sm font-bold col-span-2 text-center pb-6 text-gray-600 ">
-                  AA  {{translate.average_ratings.evaluation_deadline}} {{data.average_ratings.start_date}}
+                <h5 class="text-sm font-bold col-span-2 text-center pb-6 text-gray-600">
+                    AA {{translate.average_ratings.evaluation_deadline}} {{data.average_ratings.start_date}}
                     {{data.average_ratings.end_date}}
                 </h5>
                 <div class="grid grid-cols-2">
@@ -435,9 +436,10 @@
                         <h2 class="text-center mb-2 text-gray-600">
                             {{translate.average_ratings.collaborator_note_subtitle}}</h2>
                         <div class="rounded-full flex items-center justify-center text-gray-400 w-[170px] h-[170px] bg-primary-700"
-                            style="background-image:conic-gradient(transparent {{data.average_ratings.evaluated_average | prepend: " "}},currentcolor 0)">
+                            style="background-image:conic-gradient(transparent{{data.average_ratings.evaluated_average | prepend:" "}},currentcolor 0)">
                             <div class="rounded-full w-[140px] h-[140px] flex items-center justify-center bg-white">
-                                <h3 class="text-3xl font-bold text-primary-700">
+
+                         <h3 class="text-3xl font-bold text-primary-700">
                                     {{data.average_ratings.evaluated_average}}
                                 </h3>
                             </div>
@@ -450,7 +452,7 @@
                         <h2 class="text-center mb-2 text-gray-600">{{translate.average_ratings.position_note_subtitle}}
                         </h2>
                         <div class="rounded-full flex items-center justify-center text-gray-400 w-[170px] h-[170px] bg-primary-700"
-                            style="background-image:conic-gradient(transparent {{data.average_ratings.position_average  | prepend: " "}},currentcolor 0)">
+                            style="background-image:conic-gradient(transparent{{data.average_ratings.position_average | prepend:" "}},currentcolor 0)">
                             <div class="rounded-full w-[140px] h-[140px] flex items-center justify-center bg-white">
                                 <h3 class="text-3xl font-bold text-primary-700">
                                     {{data.average_ratings.position_average}}
@@ -463,7 +465,7 @@
         </section>
         <section class="mt-10 break-before-page break-after-page">
             <div class="bg-white shadow-md rounded-lg p-6 flex flex-col">
-                <h5 class="break-inside-avoid font-body font-bold text-sm mb-6 text-gray-800 ">
+                <h5 class="break-inside-avoid font-body font-bold text-sm mb-6 text-gray-800">
                     {{translate.skill_ratings.title}}</h5>
                 {% for skill_group in data.skill_ratings.skill_group %}
                 <div class="flex flex-row items-center space-x-3 items-center ml-6">
@@ -472,7 +474,7 @@
                         {{skill_group.name }}
                     </h2>
                     <div class="w-0.5 h-6 bg-gray-300"></div>
-                    <span class="w-[170px] break-inside-avoid font-body text-subtitle2 font-semi-bold text-gray-600 ">
+                    <span class="w-[170px] break-inside-avoid font-body text-subtitle2 font-semi-bold text-gray-600">
                         {{translate.skill_ratings.skill_group_subtitle}} {{skill_group.average}}
                     </span>
                 </div>
@@ -485,19 +487,17 @@
                             <div class="flex flex-col w-full px-12">
                                 <h5
                                     class="break-inside-avoid font-body text-subtitle1 font-semi-bold text-gray-800 mb-1 text-ellipsis overflow-hidden break-all">
-                                    {{skill.name  }}
+                                    {{skill.name }}
                                 </h5>
                                 <p class="text-gray-600 text-body2 mb-6">
                                     {{skill.description | newline_to_br}}
                                 </p>
-
                                 <div class="flex flex-row items-center">
                                     <div class="flex flex-col w-full mr-8">
                                         <div class="flex flex-row items-center justify-between w-full mr-8">
                                             <div class="flex flex-col space-y-3 w-full">
                                                 {% for rates in data.skill_ratings.rates %}
                                                 {% if rates.id == skill.rate_id %}
-
                                                 <div class="flex flex-row items-center">
                                                     <span class="w-[100px] text-caption mr-3">{{rates.evaluator}}</span>
                                                     <div class="w-[170px] h-10 relative bg-gray-300">
@@ -514,7 +514,7 @@
                                         </div>
                                     </div>
                                     <div class="flex flex-col w-full">
-                                        {% if skill.evaluated_average != "0%"  %}
+                                        {% if skill.evaluated_average != "0%" %}
                                         <div class="flex flex-row items-center w-full justify-between mb-4">
                                             <h2 class="w-[100px] text-caption mr-3">
                                                 {{translate.skill_ratings.position_general_note}}
@@ -527,7 +527,6 @@
                                                 </div>
                                             </div>
                                         </div>
-
                                         <div class="flex flex-row items-center w-full justify-between">
                                             <h2 class="w-[100px] text-caption mr-3">
                                                 {{translate.skill_ratings.position_note_average}}
