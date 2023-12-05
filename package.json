@@ -1,6 +1,6 @@
 {
     "name": "liquidtest",
-    "version": "1.2.3",
+    "version": "1.2.4",
     "author": "julio.freitas",
     "description": "generator pdf with puppeteer",
     "license": "ISC",
