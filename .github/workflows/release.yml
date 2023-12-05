@@ -36,10 +36,10 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run:  npx semantic-release | tee semantic-release.log
 
-      - name: Atualizar Versão do Pacote
+      - name: Update Package Version
         run: |
-          latest_version=$(git describe --tags --abbrev=0)
-          npm version $latest_version
-          git push
+            latest_version=$(git describe --tags --abbrev=0)
+            npm version $latest_version --allow-same-version
+            git push
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
